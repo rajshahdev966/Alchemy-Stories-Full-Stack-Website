@@ -40,8 +40,6 @@ This project goes beyond a conventional online store by combining **cinematic st
 | ![Preview 9](carrousel/9.png) | ![Preview 10](carrousel/10.png) |
 | ![Preview 11](carrousel/11.png) | ![Preview 12](carrousel/12.png) |
 
-
-
 ---
 
 ## 📖 Table of Contents
@@ -591,6 +589,7 @@ Documentation
 
 ---
 
+<<<<<<< HEAD
 ## 🛣️ Future Roadmap
 
 - [ ] AI-powered artwork recommendations
@@ -608,6 +607,8 @@ Documentation
 
 ---
 
+=======
+>>>>>>> 49618e5ed09ec41780c740af8f578690b5aebec7
 ## 🎯 Engineering Learnings
 
 This project provided valuable experience in:
@@ -643,12 +644,20 @@ The source code may not be reused for commercial purposes without permission.
 
 **Raj Shah**
 
+<<<<<<< HEAD
 Premium Frontend Engineer • UI/UX Designer • Full Stack Developer
+=======
+Premium Frontend Engineer • UI/UX Designer • Full Stack Developer 
+>>>>>>> 49618e5ed09ec41780c740af8f578690b5aebec7
 
 > Building immersive digital experiences that combine engineering, storytelling, and performance.
 
 [![GitHub](https://img.shields.io/badge/GitHub-rajshahdev966-181717?style=for-the-badge&logo=github)](https://github.com/rajshahdev966)
+<<<<<<< HEAD
 
+=======
+[![Linkedin](https://i.sstatic.net/gVE0j.png) LinkedIn](https://www.linkedin.com/rajshah-dev)
+>>>>>>> 49618e5ed09ec41780c740af8f578690b5aebec7
 ---
 
 <p align="center">
