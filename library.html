@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nature Library — Alchemy Stories Museum Registry</title>
+  <meta name="description" content="Browse our scientific registry of birds and pressed botanicals. Explore the natural origins behind each print.">
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="library.html" class="nav-link active">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Cart Sliding Drawer -->
+  <div class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display cart-title">Your Gallery Bag</h3>
+        <button class="cart-close-btn" aria-label="Close cart drawer">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      
+      <div class="cart-items-container">
+        <!-- Items dynamically populated via main.js -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val">₹ 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for shopping with Alchemy Stories! Checkout complete.')">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="section" style="background-color: var(--secondary); padding-top: 160px; padding-bottom: 80px; border-bottom: 1px solid var(--border);">
+    <div class="container text-center">
+      <span class="label-md" style="color: var(--primary);">Botanical & Ornithological Registry</span>
+      <h1 class="display-lg m-bottom-sm">Nature Library</h1>
+      <p class="body-lg" style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">An editorial archive cataloging the taxonomy and habitat stories of specimens featured in our collections.</p>
+    </div>
+  </section>
+
+  <!-- LIBRARY DIRECTORY -->
+  <section class="section">
+    <div class="container">
+      
+      <div class="grid grid-3" id="species-grid">
+        <!-- Rendered dynamically below -->
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SPECIES DETAIL MODAL -->
+  <div class="modal-overlay" id="species-modal-overlay">
+    <div class="modal-content" style="max-width: 600px;">
+      <button class="modal-close-btn" id="species-modal-close">
+        <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+      </button>
+
+      <div id="species-modal-body">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Social</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li class="footer-link"><a href="https://pinterest.com" target="_blank">Pinterest</a></li>
+            <li class="footer-link"><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li class="footer-link"><a href="contact.html">General Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Alchemy Stories. All rights reserved.</span>
+        <div style="display: flex; gap: var(--spacing-md);">
+          <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // Nature Library Data
+    const SPECIES_DATABASE = [
+      {
+        id: "adiantum",
+        name: "Maidenhair Fern",
+        scientific: "Adiantum capillus-veneris",
+        type: "Leaves / Ferns",
+        image: "assets/botanical_fern.png",
+        origin: "Western Ghats, India",
+        story: "Revered for its fine black stems and fan-shaped green pinnae, this fern grows on moist rock walls in shaded canyon slopes. In cyanotype development, its thin leaflet structures allow partial UV light penetration, rendering delicate light blue tones.",
+        productId: "wild-fern"
+      },
+      {
+        id: "ginkgo",
+        name: "Ginkgo Biloba",
+        scientific: "Ginkgo biloba",
+        type: "Leaves / Trees",
+        image: "assets/hero_flatlay.png",
+        origin: "Kyoto Temple Groves",
+        story: "A living fossil tree with unique fan-shaped split leaves. In printing, the thick fibers of the dried Ginkgo block UV rays completely, leaving clean ivory silhouettes with detailed vein networks.",
+        productId: "sunlit-leaves"
+      },
+      {
+        id: "starlings",
+        name: "Common Starling",
+        scientific: "Sturnus vulgaris",
+        type: "Birds",
+        image: "assets/murmuration.png",
+        origin: "Nalsarovar Wetlands",
+        story: "Migrating starlings flying in synchronized clouds (murmurations). We map their geometric flight paths onto multiple print layers, capturing chemical shadows of motion across deep indigo backdrops.",
+        productId: "murmuration"
+      },
+      {
+        id: "wild-clover",
+        name: "Meadow Grasses",
+        scientific: "Trifolium pratense",
+        type: "Flowers / Grasses",
+        image: "assets/journal_notebook.png",
+        origin: "Himalayan Meadows",
+        story: "Meadow grasses collect dew and hold light stalks. Pressed during seasonal collections, they are placed in triptych frames representing botany studies.",
+        productId: "botanical-studies"
+      }
+    ];
+
+    let dbSpecies = [];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof firebase !== 'undefined' && typeof SPECIES_DATABASE !== 'undefined') {
+        dbSpecies = [...SPECIES_DATABASE];
+        firebase.firestore().collection("species").get()
+          .then(snapshot => {
+            if (!snapshot.empty) {
+              const list = [];
+              snapshot.forEach(doc => {
+                list.push(doc.data());
+              });
+              dbSpecies = list;
+            }
+            renderLibraryGrid();
+            initLibraryModal();
+          })
+          .catch(() => {
+            renderLibraryGrid();
+            initLibraryModal();
+          });
+      } else {
+        if (typeof SPECIES_DATABASE !== 'undefined') {
+          dbSpecies = [...SPECIES_DATABASE];
+        }
+        renderLibraryGrid();
+        initLibraryModal();
+      }
+    });
+
+    function renderLibraryGrid() {
+      const grid = document.querySelector("#species-grid");
+      if (!grid) return;
+
+      let html = "";
+      dbSpecies.forEach(s => {
+        html += `
+          <div class="species-card" data-species-id="${s.id}">
+            <img class="species-img" src="${s.image}" alt="${s.name}">
+            <div class="species-info">
+              <h3 class="species-name font-display">${s.name}</h3>
+              <div class="species-scientific">${s.scientific}</div>
+              <div class="species-meta">
+                <span>${s.type}</span>
+                <span style="color: var(--primary); text-decoration: underline;">Open Registry →</span>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+
+    function initLibraryModal() {
+      const overlay = document.querySelector("#species-modal-overlay");
+      const close = document.querySelector("#species-modal-close");
+      const body = document.querySelector("#species-modal-body");
+      const cards = document.querySelectorAll(".species-card");
+
+      document.querySelector("#species-grid").addEventListener("click", (e) => {
+        const card = e.target.closest(".species-card");
+        if (!card) return;
+
+        const speciesId = card.getAttribute("data-species-id");
+        const species = dbSpecies.find(s => s.id === speciesId);
+        if (!species) return;
+
+        body.innerHTML = `
+          <div style="border-radius: var(--rounded-md); overflow: hidden; margin-bottom: var(--spacing-md);">
+            <img src="${species.image}" alt="${species.name}" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+          </div>
+          <span class="label-md" style="color: var(--accent-forest);">${species.type}</span>
+          <h2 class="font-display" style="font-size: 36px; margin: 4px 0 2px;">${species.name}</h2>
+          <div class="species-scientific" style="font-size: 16px; margin-bottom: var(--spacing-md);">${species.scientific}</div>
+          
+          <div style="border-left: 2px solid var(--primary); padding-left: 16px; margin-bottom: var(--spacing-md);">
+            <strong style="font-size: 13px; text-transform: uppercase; color: var(--text-secondary); display:block;">Collected Habitat</strong>
+            <span style="font-size: 15px; font-weight:600;">${species.origin}</span>
+          </div>
+
+          <p class="body-sm" style="line-height:1.7; margin-bottom: var(--spacing-lg); color: var(--neutral);">${species.story}</p>
+          
+          <div style="display: flex; gap: var(--spacing-sm);">
+            <a href="product.html?id=${species.productId}" class="btn btn-primary" style="flex-grow: 1;">View Associated Print</a>
+          </div>
+        `;
+
+        overlay.classList.add("active");
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      });
+
+      if (close) {
+        close.addEventListener("click", () => {
+          overlay.classList.remove("active");
+        });
+      }
+
+      if (overlay) {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) {
+            overlay.classList.remove("active");
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

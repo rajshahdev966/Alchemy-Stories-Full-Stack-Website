@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Checkout — Alchemy Stories</title>
+  <meta name="description" content="Complete your order for hand-crafted botanical cyanotype art prints and tower lamps.">
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <style>
+    .checkout-container {
+      margin-top: 140px;
+      margin-bottom: var(--spacing-xxl);
+    }
+    .checkout-summary-card {
+      background-color: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--rounded-md);
+      padding: var(--spacing-lg);
+      position: sticky;
+      top: 140px;
+    }
+    .checkout-summary-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+    .checkout-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-sm) 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 15px;
+    }
+    .otp-status {
+      font-size: 13px;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .otp-status.success { color: var(--success); }
+    .otp-status.error { color: var(--error); }
+    .otp-status.pending { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="library.html" class="nav-link">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart" style="pointer-events: none; opacity: 0.5;">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- CHECKOUT PAGE -->
+  <div class="container checkout-container">
+    <h1 class="display-sm m-bottom-xl" style="font-size: clamp(32px, 4.5vw, 48px); text-align: center;">Gallery Checkout</h1>
+    
+    <div class="grid grid-3 gap-lg">
+      <!-- Left: Shipping & Verification Form (Covers 2 columns) -->
+      <div style="grid-column: span 2;">
+        <div class="art-card" style="padding: var(--card-padding);">
+          <h3 class="font-display m-bottom-lg" style="font-size: 26px;">Delivery Details</h3>
+          
+          <form id="checkout-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label class="form-label" for="cust-name">Full Customer Name</label>
+              <input type="text" id="cust-name" class="form-control" placeholder="e.g. Aditi Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cust-email">Email Address</label>
+              <input type="email" id="cust-email" class="form-control" placeholder="e.g. aditi@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cust-address">Delivery Address</label>
+              <input type="text" id="cust-address" class="form-control" placeholder="Street Address, Apartment, Suite" required>
+            </div>
+
+            <div class="grid grid-3">
+              <div class="form-group">
+                <label class="form-label" for="cust-city">City</label>
+                <input type="text" id="cust-city" class="form-control" placeholder="Ahmedabad" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cust-state">State / Region</label>
+                <input type="text" id="cust-state" class="form-control" placeholder="Gujarat" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cust-zip">Postal ZIP Code</label>
+                <input type="text" id="cust-zip" class="form-control" placeholder="380054" required>
+              </div>
+            </div>
+
+            <!-- OTP Verification Section -->
+            <div style="border-top: 1px solid var(--border); padding-top: var(--spacing-md); margin-top: var(--spacing-lg);">
+              <h4 class="font-display m-bottom-md" style="font-size: 20px;">Phone SMS OTP Verification</h4>
+              
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="cust-phone">Primary Phone (For OTP verification)</label>
+                  <input type="tel" id="cust-phone" class="form-control" placeholder="e.g. +91 9876543210" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cust-altphone">Alternative Contact Number</label>
+                  <input type="tel" id="cust-altphone" class="form-control" placeholder="e.g. +91 9999988888">
+                </div>
+              </div>
+
+              <!-- CAPTCHA anchor (Required by Firebase Auth) -->
+              <div id="recaptcha-container" style="margin-bottom: var(--spacing-sm);"></div>
+
+              <div id="phone-trigger-wrap" style="display: flex; gap: var(--spacing-sm); align-items: center; margin-bottom: var(--spacing-md);">
+                <button type="button" id="send-otp-btn" class="btn btn-secondary" style="padding: 12px 24px; font-size: 13px;">Send Verification OTP</button>
+                <span id="otp-status-msg" class="otp-status"></span>
+              </div>
+
+              <!-- OTP Enter Dialog (Hidden initially) -->
+              <div id="otp-dialog-wrap" style="display: none; background-color: var(--secondary); padding: var(--spacing-md); border-radius: var(--rounded-md); border: 1px solid var(--border); margin-bottom: var(--spacing-md);">
+                <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                  <label class="form-label" for="otp-code">Enter 6-Digit SMS Verification Code</label>
+                  <input type="text" id="otp-code" class="form-control" placeholder="e.g. 123456" maxlength="6" style="letter-spacing: 0.3em; text-align: center; font-size: 20px; font-weight: bold;">
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm);">
+                  <button type="button" id="verify-otp-btn" class="btn btn-primary" style="padding: 10px 20px; font-size: 12px;">Confirm Code</button>
+                  <button type="button" id="resend-otp-btn" class="btn btn-link" style="font-size: 13px;">Resend Code</button>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--spacing-xl);">
+              <button type="submit" id="checkout-submit-btn" class="btn btn-primary" style="width: 100%;" disabled>
+                Verify Phone Number to Place Order
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Cart Invoice Summary (Covers 1 column) -->
+      <div>
+        <div class="checkout-summary-card">
+          <h3 class="checkout-summary-title">Gallery Bag</h3>
+          <div id="checkout-invoice-items">
+            <!-- Populated dynamically via checkout.js -->
+          </div>
+          
+          <div style="margin-top: var(--spacing-md); border-top: 1px solid var(--border); padding-top: var(--spacing-sm);">
+            <div style="display: flex; justify-content: space-between; font-size: 15px; margin-bottom: var(--spacing-xs);">
+              <span style="color: var(--text-secondary);">Subtotal</span>
+              <strong id="invoice-subtotal">₹ 0</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 15px; margin-bottom: var(--spacing-xs);">
+              <span style="color: var(--text-secondary);">Packaging & Frame Delivery</span>
+              <strong style="color: var(--success);">Free</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 18px; margin-top: var(--spacing-sm); border-top: 1px solid var(--border); padding-top: var(--spacing-sm);">
+              <strong>Estimated Total</strong>
+              <strong id="invoice-total" style="color: var(--primary);">₹ 0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Connect</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="contact.html">Contact Us</a></li>
+            <li class="footer-link"><a href="about.html#visit">अहमदाबाद Studio</a></li>
+            <li class="footer-link"><a href="index.html#custom-commission-section">Story Commission</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="flex justify-between items-center flex-wrap gap-md">
+          <p class="footer-copyright">&copy; 2026 Alchemy Stories. Made in Ahmedabad.</p>
+          <div class="flex gap-md" style="font-size: 13px;">
+            <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+            <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>

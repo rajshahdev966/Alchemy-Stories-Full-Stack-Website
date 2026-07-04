@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wishlist — Alchemy Stories</title>
+  <meta name="description" content="View your saved nature-inspired artworks and custom lighting selections. Pure editorial catalog archiving.">
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="library.html" class="nav-link">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn active" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Cart Sliding Drawer -->
+  <div class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display cart-title">Your Gallery Bag</h3>
+        <button class="cart-close-btn" aria-label="Close cart drawer">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      
+      <div class="cart-items-container">
+        <!-- Items dynamically populated via main.js -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val">₹ 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for shopping with Alchemy Stories! Checkout complete.')">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST HERO -->
+  <section class="section" style="background-color: var(--secondary); padding-top: 160px; padding-bottom: 80px; border-bottom: 1px solid var(--border);">
+    <div class="container text-center">
+      <span class="label-md" style="color: var(--primary);">Curated Choices</span>
+      <h1 class="display-lg m-bottom-sm">Saved Artworks</h1>
+      <p class="body-lg" style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Your personal collection of blueprints and lighting installations.</p>
+    </div>
+  </section>
+
+  <!-- WISHLIST GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3" id="wishlist-product-grid">
+        <!-- Loaded via embedded JS script -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Social</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li class="footer-link"><a href="https://pinterest.com" target="_blank">Pinterest</a></li>
+            <li class="footer-link"><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li class="footer-link"><a href="contact.html">General Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Alchemy Stories. All rights reserved.</span>
+        <div style="display: flex; gap: var(--spacing-md);">
+          <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // Wishlist page specific render script
+    function renderWishlistPage() {
+      const grid = document.querySelector("#wishlist-product-grid");
+      if (!grid) return;
+
+      const savedWishlist = JSON.parse(localStorage.getItem("alchemy_wishlist")) || [];
+
+      if (savedWishlist.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 120px 0; color: var(--text-secondary);">
+            <i data-lucide="heart" style="width: 64px; height: 64px; margin-bottom: 24px; color: var(--border);"></i>
+            <h2 class="font-display" style="font-size: 32px; margin-bottom: 12px;">Your Wishlist is Empty</h2>
+            <p class="body-sm" style="margin-bottom: 32px;">Browse our galleries and save your favorite handcrafted blueprints.</p>
+            <a href="collection.html" class="btn btn-primary">Browse Collections</a>
+          </div>
+        `;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        return;
+      }
+
+      // Filter product catalog by saved ids
+      const products = PRODUCT_DATABASE.filter(p => savedWishlist.includes(p.id));
+
+      let html = "";
+      products.forEach(p => {
+        html += `
+          <div class="art-card">
+            <div class="art-card-image-wrap">
+              <a href="product.html?id=${p.id}">
+                <img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async">
+              </a>
+              <div class="art-card-actions">
+                <button class="btn-icon-round saved" data-wishlist-toggle="${p.id}" aria-label="Remove from wishlist">
+                  <i data-lucide="heart" fill="currentColor"></i>
+                </button>
+              </div>
+            </div>
+            <span class="art-card-category">${p.categoryLabel}</span>
+            <h3 class="art-card-title"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+            <div class="art-card-footer">
+              <div class="art-card-price">₹ ${p.price.toLocaleString('en-IN')}</div>
+              <button class="btn btn-primary" data-cart-add="${p.id}" style="padding: 10px 18px; font-size: 11px; border-radius: var(--rounded-xs);">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      grid.innerHTML = html;
+
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Call render once loaded, and re-render once firestore resolves the full catalog
+    document.addEventListener("DOMContentLoaded", () => {
+      renderWishlistPage();
+      document.addEventListener("productsLoaded", renderWishlistPage);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architectural Projects — Alchemy Stories</title>
+  <meta name="description" content="Explore bespoke interior installations, lobby backdrops, and lighting commissions designed for modern homes and commercial spaces.">
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="library.html" class="nav-link">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Cart Sliding Drawer -->
+  <div class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display cart-title">Your Gallery Bag</h3>
+        <button class="cart-close-btn" aria-label="Close cart drawer">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      
+      <div class="cart-items-container">
+        <!-- Items dynamically populated via main.js -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val">₹ 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for shopping with Alchemy Stories! Checkout complete.')">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="section" style="background-color: var(--secondary); padding-top: 160px; padding-bottom: 80px; border-bottom: 1px solid var(--border);">
+    <div class="container text-center">
+      <span class="label-md" style="color: var(--primary);">Atelier commissions</span>
+      <h1 class="display-lg m-bottom-sm">Custom Projects</h1>
+      <p class="body-lg" style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">We collaborate with interior architects and private collectors to design site-specific botanical compositions.</p>
+    </div>
+  </section>
+
+  <!-- CASE STUDY 1 -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2 items-center gap-lg">
+        <div>
+          <div style="border-radius: var(--rounded-lg); overflow: hidden; box-shadow: var(--shadow-soft);">
+            <img src="assets/interior_studio.png" alt="Jaipur Lobby Installation" style="width: 100%; display: block; object-fit: cover; max-height: 480px;">
+          </div>
+        </div>
+        
+        <div style="padding-left: var(--spacing-sm);">
+          <span class="label-md" style="color: var(--primary);">Case Study 01</span>
+          <h2 class="heading-lg m-bottom-md">Jaipur Palace Lobby Panel</h2>
+          <p class="body-lg m-bottom-md" style="font-weight: 300;">An architectural installation consisting of six 8-foot custom-coated linen canvas screens, designed for the grand entrance atrium of a heritage boutique resort.</p>
+          
+          <div class="museum-label m-bottom-md">
+            <strong>Challenge:</strong> Incorporating indigenous botanical textures into a large-scale wall installation that connects structure with landscaping.<br>
+            <strong>Solution:</strong> Collected wild desert grasses and thistles native to Rajasthan. Exposed on sensitized unbleached linen canvases using direct winter solar rays.
+          </div>
+          
+          <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+            <div>
+              <span class="label-md" style="font-size: 11px; display: block; color: var(--text-secondary);">Location</span>
+              <strong style="font-size: 16px;">Jaipur, Rajasthan</strong>
+            </div>
+            <div>
+              <span class="label-md" style="font-size: 11px; display: block; color: var(--text-secondary);">Date Completed</span>
+              <strong style="font-size: 16px;">February 2026</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider" style="margin: 0;"></div></div>
+
+  <!-- CASE STUDY 2 -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2 items-center gap-lg">
+        <div style="order: 1; @media (min-width:768px){ order: 2; }">
+          <div style="border-radius: var(--rounded-lg); overflow: hidden; box-shadow: var(--shadow-soft);">
+            <img src="assets/living_room_art.png" alt="Ahmedabad Residence" style="width: 100%; display: block; object-fit: cover; max-height: 480px;">
+          </div>
+        </div>
+        
+        <div style="padding-right: var(--spacing-sm); order: 2; @media (min-width:768px){ order: 1; }">
+          <span class="label-md" style="color: var(--primary);">Case Study 02</span>
+          <h2 class="heading-lg m-bottom-md">Ahmedabad Minimalist Residence</h2>
+          <p class="body-lg m-bottom-md" style="font-weight: 300;">Designing a custom collection of pressed Ginkgo leaf panel frames and organic lighting fixtures for a modern, minimal double-height lounge.</p>
+          
+          <div class="museum-label m-bottom-md">
+            <strong>Challenge:</strong> Bringing warmth and subtle natural movement to solid exposed-concrete architectural walls.<br>
+            <strong>Solution:</strong> Coordinated four matching Ginkgo triptychs and custom-fabricated two 6-foot tall Teakwood Tower Lamps lined with hand-coated blueprint screens.
+          </div>
+          
+          <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+            <div>
+              <span class="label-md" style="font-size: 11px; display: block; color: var(--text-secondary);">Location</span>
+              <strong style="font-size: 16px;">Ahmedabad, Gujarat</strong>
+            </div>
+            <div>
+              <span class="label-md" style="font-size: 11px; display: block; color: var(--text-secondary);">Date Completed</span>
+              <strong style="font-size: 16px;">April 2026</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMISSION PROMPT BLOCK -->
+  <section class="section" style="background-color: var(--secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container text-center" style="max-width: 800px;">
+      <i data-lucide="compass" style="width: 44px; height: 44px; color: var(--primary); margin-bottom: var(--spacing-md);"></i>
+      <h2 class="heading-xl m-bottom-sm">Have a Site in Mind?</h2>
+      <p class="body-lg m-bottom-lg" style="color: var(--text-secondary);">Whether you are an architect designing a luxury hotel lobby or a private collector looking for custom frames, let's co-create a layout.</p>
+      <a href="#custom-commission-form-wrap" class="btn btn-primary">Start a Commission</a>
+    </div>
+  </section>
+
+  <!-- COMMISSION FORM -->
+  <section class="section" id="custom-commission-form-wrap">
+    <div class="container" style="max-width: 800px;">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Collaboration form</span>
+        <h2 class="heading-lg">Submit Project Blueprint</h2>
+      </div>
+
+      <div class="art-card" style="padding: var(--card-padding); background-color: var(--surface);">
+        <form onsubmit="event.preventDefault(); alert('Case study inquiry logged! Our architectural lead will respond with layout options.'); this.reset();">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label" for="proj-name">Contact Person</label>
+              <input type="text" id="proj-name" class="form-control" placeholder="e.g. Rahul Mehta (Architect)" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="proj-email">Email Address</label>
+              <input type="email" id="proj-email" class="form-control" placeholder="e.g. rahul@studio.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="proj-firm">Architectural Firm / Affiliation</label>
+            <input type="text" id="proj-firm" class="form-control" placeholder="e.g. Studio RM Design Architects">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="proj-desc">Project details & spatial layout</label>
+            <textarea id="proj-desc" class="form-control" placeholder="e.g. We are designing a duplex apartment lobby in Ahmedabad and require a series of 3 vertical frames..." required></textarea>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label" for="proj-timeline">Target Delivery Date</label>
+              <input type="date" id="proj-timeline" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="proj-budget">Project Budget tier</label>
+              <select id="proj-budget" class="form-control">
+                <option>₹ 50,000 - ₹ 1,00,000</option>
+                <option>₹ 1,00,000 - ₹ 2,50,000</option>
+                <option>₹ 2,50,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Attach AutoCAD layouts or moodboard images (Optional)</label>
+            <input type="file" class="form-control" style="padding: 10px;">
+          </div>
+
+          <div style="text-align: center; margin-top: var(--spacing-md);">
+            <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 320px;">Submit Project Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Social</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li class="footer-link"><a href="https://pinterest.com" target="_blank">Pinterest</a></li>
+            <li class="footer-link"><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li class="footer-link"><a href="contact.html">General Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Alchemy Stories. All rights reserved.</span>
+        <div style="display: flex; gap: var(--spacing-md);">
+          <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

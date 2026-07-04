@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Notes — Alchemy Stories</title>
+  <meta name="description" content="Read our botanical observations, solar printmaking guides, and bird conservation essays.">
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="library.html" class="nav-link">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link active">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Cart Sliding Drawer -->
+  <div class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display cart-title">Your Gallery Bag</h3>
+        <button class="cart-close-btn" aria-label="Close cart drawer">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      
+      <div class="cart-items-container">
+        <!-- Items dynamically populated via main.js -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val">₹ 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for shopping with Alchemy Stories! Checkout complete.')">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN BLOG POST CONTENT -->
+  <main class="blog-post-container">
+    <article class="blog-article">
+      
+      <div class="blog-meta-header">
+        <span class="blog-meta-category">Featured note</span>
+        <h1 class="blog-meta-title">The Blue Hour: Rediscovering Cyanotype Art</h1>
+        <div class="blog-meta-details">
+          <span><i data-lucide="user" style="width: 14px; height: 14px;"></i> By <strong class="blog-author">Reena Jasani</strong></span>
+          <span><i data-lucide="calendar" style="width: 14px; height: 14px;"></i> <span class="blog-date">June 15, 2026</span></span>
+          <span><i data-lucide="clock" style="width: 14px; height: 14px;"></i> <span class="blog-read-time">5 min read</span></span>
+        </div>
+      </div>
+
+      <div class="blog-main-image-wrap">
+        <img class="blog-main-image" src="assets/hero_flatlay.png" alt="Cyanotype print layout">
+      </div>
+
+      <div class="blog-body-content">
+        <!-- Dynamically rendered paragraphs -->
+      </div>
+
+      <!-- Specimen Detail Box -->
+      <div class="blog-specimen-box">
+        <div class="blog-specimen-icon">
+          <i data-lucide="leaf"></i>
+        </div>
+        <div class="blog-specimen-details">
+          <span class="blog-specimen-title">Specimen Cataloged</span>
+          <h4 class="blog-specimen-name">Cynodon dactylon & Pressed Grasses</h4>
+          <p class="blog-specimen-coords">Sabarmati Basin Study — 23.03° N, 72.58° E</p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- READ NEXT SECTION -->
+  <section class="section" style="border-top: 1px solid var(--border); padding-top: 60px;">
+    <div class="container">
+      <h3 class="font-display text-center m-bottom-xl" style="font-size: 32px;">Read Next Entries</h3>
+      <div class="grid grid-2" id="read-next-grid" style="max-width: 900px; margin: 0 auto;">
+        <!-- Dynamically rendered recommendations -->
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLAPSIBLE ADMIN AUTHOR GUIDE -->
+  <div class="admin-guide-panel">
+    <div class="container" style="max-width: 900px;">
+      <div class="admin-guide-header" id="admin-toggle">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="settings" style="color: var(--primary);"></i>
+          <h4 class="font-display" style="font-size: 20px; margin: 0;">Author Guide: How to Add & Write Blog Entries</h4>
+        </div>
+        <i data-lucide="chevron-down" id="admin-chevron" style="transition: transform var(--transition-fast);"></i>
+      </div>
+
+      <div class="admin-guide-content" id="admin-content">
+        <p class="body-sm" style="color: var(--text-secondary); margin-bottom: var(--spacing-md); line-height: 1.6;">Follow these quick architectural steps to register a new entry in the Natural Journal catalog:</p>
+        <div class="admin-step-list">
+          <div class="admin-step-item">
+            <span class="admin-step-num">01</span>
+            <h5 class="admin-step-title">Add to Database</h5>
+            <p class="admin-step-desc">Open <a href="file:///c:/Users/Raj%20Shah/OneDrive/Desktop/ALL%20CODING%20PROJECT/Alchemy%20Portfolio%20Project%20-%203/assets/js/blog-data.js" style="color:var(--primary); text-decoration: underline;">blog-data.js</a>. Append a new object containing: unique <code>id</code>, <code>title</code>, <code>category</code>, <code>author</code>, <code>date</code>, <code>readTime</code>, cover <code>image</code>, <code>description</code>, and a <code>content</code> array of paragraph strings.</p>
+          </div>
+
+          <div class="admin-step-item">
+            <span class="admin-step-num">02</span>
+            <h5 class="admin-step-title">Link Card in Index</h5>
+            <p class="admin-step-desc">In <a href="file:///c:/Users/Raj%20Shah/OneDrive/Desktop/ALL%20CODING%20PROJECT/Alchemy%20Portfolio%20Project%20-%203/journal.html" style="color:var(--primary); text-decoration: underline;">journal.html</a>, change the card links from general <code>#</code> to <code>blog.html?id=YOUR_ID</code>, matching the database key. They will resolve automatically.</p>
+          </div>
+
+          <div class="admin-step-item">
+            <span class="admin-step-num">03</span>
+            <h5 class="admin-step-title">Deploy & Test</h5>
+            <p class="admin-step-desc">Refresh your browser and verify the new card redirect. The dynamic engine will immediately read your custom coordinates, images, and paragraphs without compiling any files!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Connect</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="contact.html">Contact Us</a></li>
+            <li class="footer-link"><a href="about.html#visit"> अहमदाबाद Studio</a></li>
+            <li class="footer-link"><a href="index.html#custom-commission-section">Story Commission</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="flex justify-between items-center flex-wrap gap-md">
+          <p class="footer-copyright">&copy; 2026 Alchemy Stories. Made in Ahmedabad.</p>
+          <div class="flex gap-md" style="font-size: 13px;">
+            <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+            <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/blog-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+</body>
+</html>

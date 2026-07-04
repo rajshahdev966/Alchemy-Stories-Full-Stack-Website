@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alchemy Stories — Storytelling Through Art & Nature</title>
+  <meta name="description" content="Elegantly handcrafted cyanotypes, botanical prints, and nature-inspired interior installations from the Alchemy Stories studio. Ahmedabad, India.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alchemystories.co/">
+  <meta property="og:title" content="Alchemy Stories — Storytelling Through Art & Nature">
+  <meta property="og:description" content="Elegantly handcrafted cyanotypes, botanical prints, and nature-inspired interior installations. Ahmedabad, India.">
+  <meta property="og:image" content="https://alchemystories.co/assets/hero_flatlay.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://alchemystories.co/">
+  <meta property="twitter:title" content="Alchemy Stories — Storytelling Through Art & Nature">
+  <meta property="twitter:description" content="Elegantly handcrafted cyanotypes, botanical prints, and nature-inspired interior installations. Ahmedabad, India.">
+  <meta property="twitter:image" content="https://alchemystories.co/assets/hero_flatlay.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://alchemystories.co/">
+
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Performance Preload for LCP Slide -->
+  <link rel="preload" as="image" href="assets/hero_flatlay.png">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header header-home">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="library.html" class="nav-link">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Cart Sliding Drawer -->
+  <div class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display cart-title">Your Gallery Bag</h3>
+        <button class="cart-close-btn" aria-label="Close cart drawer">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      
+      <div class="cart-items-container">
+        <!-- Items dynamically populated via main.js -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val">₹ 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for shopping with Alchemy Stories! Checkout complete.')">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 01 — HERO CAROUSEL -->
+  <section class="hero-carousel-section">
+    <div class="hero-carousel-container">
+      <div class="hero-slide active" style="background-image: url('assets/hero_flatlay.png');"></div>
+      <div class="hero-slide" style="background-image: url('assets/interior_studio.png');"></div>
+      <div class="hero-slide" style="background-image: url('assets/murmurations_and_schooling.png');"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-tagline">Alchemy Stories</span>
+      <h1 class="hero-title">Storytelling through art, with nature as our muse.</h1>
+      <p class="hero-desc">Every artwork is handcrafted using cyanotype, botanical impressions, and narratives collected from the wild.</p>
+      <div class="hero-cta-btn">
+        <a href="collection.html" class="btn btn-primary">Explore Collections</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" onclick="window.scrollTo(0, window.innerHeight)">
+      <span>↓ Scroll to Discover</span>
+    </div>
+    <div class="hero-location-tag">
+      <span>Ahmedabad, India</span>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — CURATED COLLECTIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Museum Exhibition</span>
+        <h2 class="display-lg m-bottom-sm">Curated Collections</h2>
+        <p class="body-lg" style="max-width: 650px; margin: 0 auto; color: var(--text-secondary);">Browse artist archives that preserve the transient patterns of the seasonal landscape.</p>
+      </div>
+
+      <div class="editorial-masonry">
+        <!-- Tower Lamps (Masonry Block) -->
+        <div class="masonry-col-7">
+          <a href="collection.html?category=tower-lamps" class="featured-collection-card landscape">
+            <img src="assets/lamp_tower.png" alt="Tower Lamps">
+            <div class="featured-collection-card-content">
+              <h3 class="featured-collection-card-title">Tower Lamps</h3>
+              <p class="featured-collection-card-desc">Casting warm solar leaf silhouettes on organic mulberry paper frames.</p>
+              <span class="btn btn-link" style="color: white; border-color: white;">View Details</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Cyanotype Collection -->
+        <div class="masonry-col-5">
+          <a href="collection.html?category=wall-art" class="featured-collection-card cyanotypes-desktop-align">
+            <img src="assets/botanical_fern.png" alt="Cyanotype Collection">
+            <div class="featured-collection-card-content">
+              <h3 class="featured-collection-card-title">Cyanotypes</h3>
+              <p class="featured-collection-card-desc">Intricate solar impressions of ferns and wild foliage on watercolor paper.</p>
+              <span class="btn btn-link" style="color: white; border-color: white;">View Details</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Murmurations -->
+        <div class="masonry-col-4">
+          <a href="collection.html?category=wall-art" class="featured-collection-card">
+            <img src="assets/murmuration.png" alt="Murmuration Series">
+            <div class="featured-collection-card-content">
+              <h3 class="featured-collection-card-title">Murmurations</h3>
+              <p class="featured-collection-card-desc">Flight patterns of lake-bed starlings captured in indigo layers.</p>
+              <span class="btn btn-link" style="color: white; border-color: white;">View Details</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Botanical Stories -->
+        <div class="masonry-col-4">
+          <a href="collection.html?category=sets" class="featured-collection-card">
+            <img src="assets/journal_notebook.png" alt="Botanical Stories">
+            <div class="featured-collection-card-content">
+              <h3 class="featured-collection-card-title">Botanical Study</h3>
+              <p class="featured-collection-card-desc">A triptych of pressed wildflowers on unbleached linen cotton.</p>
+              <span class="btn btn-link" style="color: white; border-color: white;">View Details</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blue Bird Series -->
+        <div class="masonry-col-4">
+          <a href="collection.html?category=limited-edition" class="featured-collection-card">
+            <img src="assets/blue_bird_series.png" alt="Blue Bird Series">
+            <div class="featured-collection-card-content">
+              <h3 class="featured-collection-card-title">Blue Birds</h3>
+              <p class="featured-collection-card-desc">Flight movement sequences layered under solar developing solutions.</p>
+              <span class="btn btn-link" style="color: white; border-color: white;">View Details</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — OUR STORY -->
+  <section class="section" style="background-color: var(--secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="grid grid-2 items-center gap-lg">
+        <div>
+          <div style="position: relative; border-radius: var(--rounded-lg); overflow: hidden; box-shadow: var(--shadow-soft);">
+            <img src="assets/founders.png" alt="Reena Jasani & Kushan Jasani in Studio" style="width: 100%; display: block; object-fit: cover;">
+            <div style="position: absolute; bottom: 24px; left: 24px; background-color: var(--primary); padding: 16px 24px; border-radius: var(--rounded-md); color: white; max-width: 250px; box-shadow: var(--shadow-soft);">
+              <span class="font-display" style="font-size: 20px; font-style: italic; display: block; line-height: 1.3; color: #F8F6F2;">"Nature is our greatest storyteller."</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding-left: var(--spacing-md);">
+          <span class="label-md" style="color: var(--primary);">Behind the Imprints</span>
+          <h2 class="heading-xl m-bottom-md">Preserving ephemeral moments of the natural world.</h2>
+          <p class="body-lg m-bottom-md" style="font-weight: 300;">We do not simply produce artwork; we catalog moments. Our founders Reena Jasani & Kushan Jasani bridge traditional botanical collecting techniques with contemporary solar-developing printmaking.</p>
+          <p class="body-md m-bottom-lg" style="color: var(--text-secondary);">Using sunlight, water, and organic specimens collected from forest floors and riverbanks, each piece holds the memory of the exact date, weather, and location of its exposure.</p>
+          <a href="about.html" class="btn btn-primary">Read Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 04 — THE ALCHEMY PROCESS Sticky scroll -->
+  <div class="process-scroll-wrapper">
+    <div class="process-sticky-container">
+      
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="process-heading-row" style="margin-bottom: var(--spacing-sm); text-align: center;">
+          <span class="label-md" style="color: var(--primary);">Craftsmanship</span>
+          <h2 class="heading-xl">The Alchemy Process</h2>
+          <p class="body-sm" style="color: var(--text-secondary);">Scroll down to reveal how chemistry, sunlight, and handcrafting merge.</p>
+        </div>
+
+        <!-- Timeline Track -->
+        <div class="process-timeline-wrapper">
+          <div class="process-timeline-line"></div>
+          <div class="process-timeline">
+            <div class="timeline-step active" data-step="0">
+              <div class="timeline-icon-wrap"><i data-lucide="eye"></i></div>
+              <span class="timeline-label">01. Observe</span>
+            </div>
+            <div class="timeline-step" data-step="1">
+              <div class="timeline-icon-wrap"><i data-lucide="scissors"></i></div>
+              <span class="timeline-label">02. Collect</span>
+            </div>
+            <div class="timeline-step" data-step="2">
+              <div class="timeline-icon-wrap"><i data-lucide="layout"></i></div>
+              <span class="timeline-label">03. Compose</span>
+            </div>
+            <div class="timeline-step" data-step="3">
+              <div class="timeline-icon-wrap"><i data-lucide="sun"></i></div>
+              <span class="timeline-label">04. Expose</span>
+            </div>
+            <div class="timeline-step" data-step="4">
+              <div class="timeline-icon-wrap"><i data-lucide="droplet"></i></div>
+              <span class="timeline-label">05. Develop</span>
+            </div>
+            <div class="timeline-step" data-step="5">
+              <div class="timeline-icon-wrap"><i data-lucide="pen-tool"></i></div>
+              <span class="timeline-label">06. Finish</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animation Viewport (Overlaid directly in front of the section) -->
+      <div class="process-animation-viewport">
+        <div class="process-paper-stage">
+          <div class="process-paper">
+            <!-- Origami Folds Overlay (Simulating crease lines) -->
+            <div class="origami-fold-line fold-left"></div>
+            <div class="origami-fold-line fold-right"></div>
+            <div class="origami-fold-line fold-top"></div>
+            <div class="origami-fold-line fold-bottom"></div>
+
+            <!-- Artwork Blueprint & Drawing Layers -->
+            <div class="paper-layer layer-blueprint"></div>
+            <div class="paper-layer layer-sketch">
+              <svg class="sketch-svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.0" fill="none" class="sketch-path" />
+                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.0" fill="none" class="sketch-path" />
+              </svg>
+            </div>
+
+            <!-- Written Information Layer & Inline Photos -->
+            <div class="paper-content">
+              <div class="paper-header">
+                <h3 class="paper-title font-display">Observe Nature</h3>
+                <span class="paper-step-num">01</span>
+              </div>
+              <div class="paper-divider"></div>
+              
+              <p class="paper-desc">We wander local forests, wetlands, and mountain paths, observing the seasonal geometries of wild botanicals and avian behaviors.</p>
+              
+              <!-- Inline Images inside the card -->
+              <div class="paper-images-inline">
+                <img src="assets/hero_flatlay.png" alt="Observe Details 1" class="step-img-1">
+                <img src="assets/interior_studio.png" alt="Observe Details 2" class="step-img-2">
+              </div>
+
+              <!-- Handwritten Details -->
+              <div class="paper-annotations">
+                <span class="annotation-text">sabarmati valley botanical study</span>
+                <span class="annotation-pin"><i data-lucide="map-pin"></i> 23.02° N, 72.57° E</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 05 — ART MEETS INTERIOR -->
+  <section class="section" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Exhibition Showcase</span>
+        <h2 class="heading-xl m-bottom-sm">Harmony in Space</h2>
+        <p class="body-md" style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Select an interior space to see how our handcrafted artworks elevate architectural details.</p>
+        
+        <div style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-top: var(--spacing-lg);">
+          <button class="btn btn-secondary active interior-room-btn" data-room="living-room">Living Room</button>
+          <button class="btn btn-secondary interior-room-btn" data-room="study">The Atelier / Study</button>
+          <button class="btn btn-secondary interior-room-btn" data-room="villa">Stanza / Villa</button>
+        </div>
+      </div>
+
+      <div class="interior-showcase-wrap">
+        <img class="interior-main-img" src="assets/living_room_art.png" alt="Interior room rendering" style="transition: opacity 200ms ease;">
+        <div class="interior-hotspots-overlay">
+          <!-- Hotspots dynamically loaded via home.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 06 — WHY ALCHEMY STORIES -->
+  <section class="section" style="background-color: var(--secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Philosophy</span>
+        <h2 class="heading-xl">Bespoke Excellence</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Card 1 -->
+        <div class="art-card" style="padding: var(--card-padding); background-color: var(--surface);">
+          <i data-lucide="award" style="width: 32px; height: 32px; color: var(--primary); margin-bottom: 20px;"></i>
+          <h3 class="heading-md m-bottom-sm">100% Handcrafted</h3>
+          <p class="body-sm">Every print is individually coated, exposed, and washed by hand in our Ahmedabad studio. No digital replication.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="art-card" style="padding: var(--card-padding); background-color: var(--surface);">
+          <i data-lucide="sparkles" style="width: 32px; height: 32px; color: var(--primary); margin-bottom: 20px;"></i>
+          <h3 class="heading-md m-bottom-sm">Bespoke Unique Prints</h3>
+          <p class="body-sm">Since exposures rely on the dynamic angles of solar UV rays, no two cyanotypes can ever be identical.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="art-card" style="padding: var(--card-padding); background-color: var(--surface);">
+          <i data-lucide="feather" style="width: 32px; height: 32px; color: var(--primary); margin-bottom: 20px;"></i>
+          <h3 class="heading-md m-bottom-sm">Botanical Heritage</h3>
+          <p class="body-sm">We document actual flora coordinates on museum labels, bridging scientific herbariums with fine interior design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07 — TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="testimonial-carousel-container">
+        <div class="testimonial-track">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <img class="testimonial-portrait" src="assets/founders.png" alt="Client Review">
+            <p class="testimonial-quote">"The Murmuration print hangs above our living room credenza. The deep blue tones transform as day shifts into evening light. It holds a peaceful, biological weight."</p>
+            <span class="testimonial-client">Aditi & Vikram Mehta</span>
+            <span class="testimonial-location">Mumbai Penthouse</span>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <img class="testimonial-portrait" src="assets/interior_studio.png" alt="Architect Review">
+            <p class="testimonial-quote">"For our boutique hotel project in Jaipur, we commissioned six custom botanical panels. Alchemy Stories captured specimens native to the site, creating a deeply connected narrative."</p>
+            <span class="testimonial-client">Studio P.B. Architects</span>
+            <span class="testimonial-location">Boutique Resort, Jaipur</span>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <img class="testimonial-portrait" src="assets/journal_notebook.png" alt="Homeowner Review" loading="lazy" decoding="async">
+            <p class="testimonial-quote">"We commissioned a custom triptych mapping the Aravali forest floor. The attention to botanical anatomy and coordinates created a deeply personal registry in our home."</p>
+            <span class="testimonial-client">Prof. M. S. Swaminathan</span>
+            <span class="testimonial-location">Atelier Residences, Pune</span>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="testimonial-slide">
+            <img class="testimonial-portrait" src="assets/blue_bird_series.png" alt="Interior Designer Review" loading="lazy" decoding="async">
+            <p class="testimonial-quote">"The framing is a masterpiece itself. The hand-finished raw teak wood complements the Prussian blue organic lines beautifully. It adds an architectural detail to the space."</p>
+            <span class="testimonial-client">Rohan & Sneha Joshi</span>
+            <span class="testimonial-location">Design Villa, Ahmedabad</span>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="testimonial-slide">
+            <img class="testimonial-portrait" src="assets/founders.png" alt="Curator Review" loading="lazy" decoding="async">
+            <p class="testimonial-quote">"As an interior curator, finding artwork that carries both heritage chemistry and modern spacious minimalism is rare. Alchemy Stories is our absolute go-to for projects."</p>
+            <span class="testimonial-client">Karan Malhotra, Principal Curator</span>
+            <span class="testimonial-location">KM Design Collective, New Delhi</span>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators">
+          <!-- Dots rendered dynamically via home.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDALONE SECTION — CUSTOM STORY COMMISSION -->
+  <section class="section" style="background-color: var(--surface-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="custom-commission-section">
+    <div class="container" style="max-width: 800px;">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Bespoke Artworks</span>
+        <h2 class="heading-xl m-bottom-sm">Custom Story Commission</h2>
+        <p class="body-md" style="color: var(--text-secondary);">Do you have a special landscape memory, leaves from a childhood garden, or a travel diary coordinate? Let us transform your stories into blueprint archives.</p>
+      </div>
+
+      <div class="art-card" style="padding: var(--card-padding); background-color: var(--surface);">
+        <form id="home-commission-form" onsubmit="event.preventDefault(); alert('Commission inquiry logged! We will reach out within 48 hours.'); this.reset();">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label" for="comm-name">Your name</label>
+              <input type="text" id="comm-name" class="form-control" placeholder="e.g. Aditi Sharma" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="comm-email">Email address</label>
+              <input type="email" id="comm-email" class="form-control" placeholder="e.g. aditi@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label" for="comm-phone">Phone number</label>
+              <input type="tel" id="comm-phone" class="form-control" placeholder="e.g. +91 98765 43210">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="comm-location">Botanical Origin location</label>
+              <input type="text" id="comm-location" class="form-control" placeholder="e.g. Coorg Foothills, Karnataka">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="comm-story">Describe the story or specimens you wish to print</label>
+            <textarea id="comm-story" class="form-control" placeholder="e.g. Wild ferns collected during our family trek..." required></textarea>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label" for="comm-size">Preferred artwork scale</label>
+              <select id="comm-size" class="form-control">
+                <option>Medium (18 x 24 inches)</option>
+                <option>Large (24 x 36 inches)</option>
+                <option>Atelier scale (30 x 40 inches)</option>
+                <option>Custom composition sizes</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="comm-budget">Estimated budget tier</label>
+              <select id="comm-budget" class="form-control">
+                <option>₹ 15,000 - ₹ 25,000</option>
+                <option>₹ 25,000 - ₹ 50,000</option>
+                <option>₹ 50,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: var(--spacing-md);">
+            <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 320px;">Submit Commission request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08 — FIELD NOTES -->
+  <section class="section">
+    <div class="container">
+      <div class="flex justify-between items-center m-bottom-lg">
+        <div>
+          <span class="label-md" style="color: var(--accent-forest);">Field Diaries</span>
+          <h2 class="heading-lg">Nature Journal</h2>
+        </div>
+        <a href="journal.html" class="btn btn-link">Read All Notes →</a>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Post 1 -->
+        <article class="art-card" style="padding: var(--spacing-sm);">
+          <div class="art-card-image-wrap" style="aspect-ratio: 16/10; margin-bottom: var(--spacing-sm);">
+            <img src="assets/journal_notebook.png" alt="Journal entry">
+          </div>
+          <span class="art-card-category" style="color: var(--accent-forest);">Botanical Studies</span>
+          <h3 class="font-display" style="font-size: 24px; margin-bottom: 8px;">The Memory of Ferns</h3>
+          <p class="body-sm" style="margin-bottom: var(--spacing-md);">Exploring the ancient symmetry of ferns and how they print details onto cotton fibers.</p>
+          <a href="journal.html" class="btn btn-link">Read Entry</a>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="art-card" style="padding: var(--spacing-sm);">
+          <div class="art-card-image-wrap" style="aspect-ratio: 16/10; margin-bottom: var(--spacing-sm);">
+            <img src="assets/murmuration.png" alt="Journal entry">
+          </div>
+          <span class="art-card-category" style="color: var(--accent-forest);">Birdwatching</span>
+          <h3 class="font-display" style="font-size: 24px; margin-bottom: 8px;">Starling Geometries</h3>
+          <p class="body-sm" style="margin-bottom: var(--spacing-md);">Mapping the collective flow of starlings over Nalsarovar lake at dusk.</p>
+          <a href="journal.html" class="btn btn-link">Read Entry</a>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="art-card" style="padding: var(--spacing-sm);">
+          <div class="art-card-image-wrap" style="aspect-ratio: 16/10; margin-bottom: var(--spacing-sm);">
+            <img src="assets/hero_flatlay.png" alt="Journal entry">
+          </div>
+          <span class="art-card-category" style="color: var(--accent-forest);">Chemistry</span>
+          <h3 class="font-display" style="font-size: 24px; margin-bottom: 8px;">Sun & Toning Chemistry</h3>
+          <p class="body-sm" style="margin-bottom: var(--spacing-md);">How double-bath development shifts Prussian blue prints into deep forest green and golden sepia shades.</p>
+          <a href="journal.html" class="btn btn-link">Read Entry</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09 — INSTAGRAM GALLERY -->
+  <section class="section" style="background-color: var(--secondary); border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Studio Diaries</span>
+        <h2 class="heading-lg">Instagram Stories</h2>
+        <p class="body-sm" style="color: var(--text-secondary);">A visual look inside our daily printing processes and wood workshops.</p>
+      </div>
+
+      <div class="instagram-masonry">
+        <div class="instagram-item">
+          <img src="assets/interior_studio.png" alt="Studio details">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/botanical_fern.png" alt="Cyanotype print">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/founders.png" alt="Artisans at work">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/lamp_tower.png" alt="Teak lamp base">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/journal_notebook.png" alt="Journal notebook design">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/hero_flatlay.png" alt="Flatlay arrangement">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/living_room_art.png" alt="Living room hanging art">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+        <div class="instagram-item">
+          <img src="assets/blue_bird_series.png" alt="Cyanotype birds print series">
+          <div class="instagram-overlay"><i data-lucide="instagram"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 — VISIT OUR STUDIO -->
+  <section class="section" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="grid grid-2 items-center gap-lg">
+        <div>
+          <span class="label-md" style="color: var(--primary);">Ahmedabad Studio</span>
+          <h2 class="heading-xl m-bottom-md">Visit Our Studio</h2>
+          <p class="body-md m-bottom-lg">We welcome architects, designers, and art enthusiasts to our studio to experience sun print developments live. Kindly book an appointment beforehand.</p>
+          
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm);">
+              <i data-lucide="map-pin" style="color: var(--primary); flex-shrink: 0; margin-top: 4px;"></i>
+              <div>
+                <strong style="color: var(--text-primary);">Studio Address</strong>
+                <p class="body-sm" style="margin-top: 4px;">Alchemy Stories Studio, Bodakdev, Ahmedabad, Gujarat 380054</p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm);">
+              <i data-lucide="clock" style="color: var(--primary); flex-shrink: 0; margin-top: 4px;"></i>
+              <div>
+                <strong style="color: var(--text-primary);">Opening Hours</strong>
+                <p class="body-sm" style="margin-top: 4px;">Monday to Saturday: 10:00 AM — 06:00 PM (Closed Sundays)</p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm);">
+              <i data-lucide="phone" style="color: var(--primary); flex-shrink: 0; margin-top: 4px;"></i>
+              <div>
+                <strong style="color: var(--text-primary);">Call or WhatsApp</strong>
+                <p class="body-sm" style="margin-top: 4px;">+91 79 4005 8791 / +91 99099 23412</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="width: 100%; height: 380px; border-radius: var(--rounded-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-soft); position: relative; background-color: var(--secondary);">
+            <!-- Map placeholder using styled background grid or simple graphic representation -->
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle, transparent 20%, var(--secondary) 20%, var(--secondary) 80%, transparent 80%, transparent) 0% 0% / 16px 16px, radial-gradient(circle, transparent 20%, var(--secondary) 20%, var(--secondary) 80%, transparent 80%, transparent) 8px 8px / 16px 16px, var(--border); opacity: 0.5;"></div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 5;">
+              <i data-lucide="map-pin" style="width: 48px; height: 48px; color: var(--primary); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1)); margin-bottom: 12px; animation: bounce 2s infinite;"></i>
+              <h4 class="font-display" style="font-size: 24px;">Alchemy Stories Studio</h4>
+              <p class="body-sm" style="margin-top: 4px;">Bodakdev Road, Ahmedabad</p>
+              <a href="https://maps.google.com" target="_blank" class="btn btn-secondary" style="margin-top: 16px; padding: 10px 20px; font-size: 12px; border-radius: var(--rounded-xs);">Open In Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Social</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li class="footer-link"><a href="https://pinterest.com" target="_blank">Pinterest</a></li>
+            <li class="footer-link"><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li class="footer-link"><a href="contact.html">General Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Alchemy Stories. All rights reserved.</span>
+        <div style="display: flex; gap: var(--spacing-md);">
+          <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

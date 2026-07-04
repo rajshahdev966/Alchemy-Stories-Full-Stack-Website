@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artwork Details — Alchemy Stories</title>
+  <meta name="description" content="Discover technical specifications, materials, framing styles, and care guides for individual Alchemy Stories prints. Customization available.">
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Collections</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="library.html" class="nav-link">Nature Library</a></li>
+          <li><a href="journal.html" class="nav-link">Nature Journal</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+        <button class="nav-action-btn cart-trigger" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer">
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collection.html" class="mobile-nav-link">Collections</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="library.html" class="mobile-nav-link">Nature Library</a></li>
+      <li><a href="journal.html" class="mobile-nav-link">Nature Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Cart Sliding Drawer -->
+  <div class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display cart-title">Your Gallery Bag</h3>
+        <button class="cart-close-btn" aria-label="Close cart drawer">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      
+      <div class="cart-items-container">
+        <!-- Items dynamically populated via main.js -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val">₹ 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you for shopping with Alchemy Stories! Checkout complete.')">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div style="background-color: var(--secondary); padding-top: 120px; padding-bottom: var(--spacing-sm); border-bottom: 1px solid var(--border);">
+    <div class="container" style="font-size: 14px;">
+      <a href="index.html" style="color: var(--text-secondary);">Home</a> &nbsp;/&nbsp; 
+      <a href="collection.html" style="color: var(--text-secondary);">Collections</a> &nbsp;/&nbsp; 
+      <span id="product-breadcrumb-name" style="color: var(--primary); font-weight: 500;">Artwork Details</span>
+    </div>
+  </div>
+
+  <!-- PRODUCT CONTAINER -->
+  <section class="section" id="product-detail-container">
+    <div class="container">
+      <div class="grid grid-2 gap-lg">
+        
+        <!-- Left: Image Gallery -->
+        <div class="product-gallery-wrap">
+          <div class="product-main-view">
+            <img id="product-main-image" src="assets/logo.png" alt="Primary Artwork">
+          </div>
+          <div class="product-thumbnails" id="product-thumbnails-container">
+            <!-- Thumbnails rendered dynamically via product.js -->
+          </div>
+        </div>
+
+        <!-- Right: Content details -->
+        <div style="padding-left: var(--spacing-sm);">
+          <a href="collection.html" id="product-category-label" class="label-md" style="color: var(--accent-forest); margin-bottom: var(--spacing-sm); display: inline-block;">Wall Art</a>
+          <h1 id="product-name" class="display-lg m-bottom-sm" style="font-size: clamp(36px, 4.5vw, 56px);">Artwork Name</h1>
+          
+          <div id="product-price" class="font-display m-bottom-md" style="font-size: 32px; color: var(--primary); font-weight: 600;">₹ 0</div>
+          
+          <p id="product-desc" class="body-md m-bottom-lg" style="color: var(--neutral); font-weight: 300; line-height: 1.8;">Details about the printmaking methodology and natural elements.</p>
+          
+          <!-- Actions -->
+          <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); flex-wrap: wrap;">
+            <button id="product-add-cart-btn" class="btn btn-primary" style="flex-grow: 1;">Add to Bag</button>
+            <button id="product-customize-btn" class="btn btn-secondary" style="flex-grow: 1;">Request Customisation</button>
+          </div>
+
+          <!-- WebAR 3D Experience Action (specific to 3D assets e.g. Tower Lamps) -->
+          <div id="product-ar-trigger-wrap" style="display: none; margin-bottom: var(--spacing-xl);">
+            <button id="product-ar-trigger" class="btn btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: var(--spacing-sm); border: 1px solid var(--primary); color: var(--primary); background: transparent; font-weight: 600;">
+              <i data-lucide="aperture"></i> View in 3D & WebAR
+            </button>
+          </div>
+
+          <div style="margin-bottom: var(--spacing-xl);">
+            <button id="product-wishlist-btn" class="btn btn-link" style="font-size: 15px; font-weight: 600;">
+              <i data-lucide="heart"></i> Save to Wishlist
+            </button>
+          </div>
+
+          <!-- Product Details Accordions -->
+          <div class="product-accordions">
+            <!-- Specifications -->
+            <div class="accordion-item active">
+              <button class="accordion-header">
+                Technical Specifications <i data-lucide="chevron-down" style="width: 18px; height: 18px;"></i>
+              </button>
+              <div class="accordion-content">
+                <div id="product-specs-list"></div>
+              </div>
+            </div>
+
+            <!-- Materials -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Materials & Composition <i data-lucide="chevron-down" style="width: 18px; height: 18px;"></i>
+              </button>
+              <div class="accordion-content">
+                <p id="product-materials-content">We source unbleached, hand-crafted Khadi and French cotton rag papers to guarantee long-term fibers stability. Sensitizing solutions are hand-coated under darkroom guidelines using refined iron compounds (Ferric Ammonium Citrate and Potassium Ferricyanide).</p>
+              </div>
+            </div>
+
+            <!-- Care Guide -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Preservation & Care Guide <i data-lucide="chevron-down" style="width: 18px; height: 18px;"></i>
+              </button>
+              <div class="accordion-content">
+                <p id="product-care-content">Cyanotype prints are chemically stable but can fade if exposed to continuous direct midday UV sunlight. We apply a protective museum sealer; however, we advise framing with UV-protective glass and hanging prints away from highly damp walls or direct sun spots.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="section" style="border-top: 1px solid var(--border); background-color: var(--secondary);">
+    <div class="container">
+      <div class="text-center m-bottom-xl">
+        <span class="label-md" style="color: var(--primary);">Atelier recommendation</span>
+        <h2 class="heading-lg">Related Artworks</h2>
+      </div>
+
+      <div class="grid grid-3" id="related-products-grid">
+        <!-- Rendered dynamically via product.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- REUSABLE CUSTOMIZATION INQUIRY POPUP MODAL -->
+  <div class="modal-overlay" id="inquiry-modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="inquiry-modal-close" aria-label="Close form">
+        <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+      </button>
+
+      <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+        <i data-lucide="sliders" style="width: 36px; height: 36px; color: var(--primary); margin: 0 auto 12px;"></i>
+        <h3 class="font-display" style="font-size: 28px;">Bespoke Commission Inquiry</h3>
+        <p class="body-sm" style="color: var(--text-secondary);">Request size alterations, frame variants, or custom foliage placements.</p>
+      </div>
+
+      <form id="inquiry-form">
+        <div class="form-group">
+          <label class="form-label" for="inq-prod">Selected Artwork</label>
+          <input type="text" id="inquiry-product-name" name="product" class="form-control" readonly style="background-color: var(--border);">
+        </div>
+
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label class="form-label" for="inq-name">Your Name</label>
+            <input type="text" id="inq-name" name="name" class="form-control" placeholder="Aditi Sharma" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inq-email">Email Address</label>
+            <input type="email" id="inq-email" name="email" class="form-control" placeholder="aditi@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="inq-request">Detail your custom request (size, wood preference, styling)</label>
+          <textarea id="inq-request" name="request" class="form-control" placeholder="e.g. I would love to order this print in a 30x40 inch canvas size using a light ash-wood frame..." required></textarea>
+        </div>
+
+        <div style="display: flex; gap: var(--spacing-sm); margin-top: var(--spacing-lg);">
+          <button type="submit" class="btn btn-primary" style="flex-grow: 1;">Submit Custom request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- AR / 3D INTERACTIVE & WebAR MODAL -->
+  <div class="modal-overlay" id="ar-modal-overlay">
+    <div class="modal-content" style="max-width: 500px; padding: var(--spacing-lg); position: relative; border-radius: var(--rounded-md);">
+      <button class="modal-close-btn" id="ar-modal-close" aria-label="Close viewer">
+        <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+      </button>
+
+      <!-- Desktop View: Creative Branded QR Card -->
+      <div id="ar-desktop-content" style="text-align: center;">
+        <span class="label-md" style="color: var(--primary); margin-bottom: var(--spacing-sm); display: inline-block;">Spatial Exhibition</span>
+        <h3 class="font-display" style="font-size: 32px; color: var(--neutral); margin-bottom: var(--spacing-xs);">AR Gallery Portal</h3>
+        <p class="body-sm" style="color: var(--text-secondary); max-width: 320px; margin: 0 auto var(--spacing-lg); line-height: 1.5;">Scan this certificate with your mobile phone camera to cast the Tower Lamp in WebAR.</p>
+        
+        <!-- Branded QR Frame Container -->
+        <div style="position: relative; width: 220px; height: 220px; margin: 0 auto var(--spacing-lg); padding: var(--spacing-md); background-color: var(--surface); border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-soft);">
+          <!-- Photo corners -->
+          <div class="qr-corner qr-top-left" style="position: absolute; width: 14px; height: 14px; border-top: 2px solid var(--primary); border-left: 2px solid var(--primary); top: 8px; left: 8px;"></div>
+          <div class="qr-corner qr-top-right" style="position: absolute; width: 14px; height: 14px; border-top: 2px solid var(--primary); border-right: 2px solid var(--primary); top: 8px; right: 8px;"></div>
+          <div class="qr-corner qr-bottom-left" style="position: absolute; width: 14px; height: 14px; border-bottom: 2px solid var(--primary); border-left: 2px solid var(--primary); bottom: 8px; left: 8px;"></div>
+          <div class="qr-corner qr-bottom-right" style="position: absolute; width: 14px; height: 14px; border-bottom: 2px solid var(--primary); border-right: 2px solid var(--primary); bottom: 8px; right: 8px;"></div>
+          
+          <!-- Inner QR Wrapper -->
+          <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <div id="ar-modal-qrcode" style="width: 100%; height: 100%; background-color: white; display: flex; align-items: center; justify-content: center;">
+              <!-- QR Code image -->
+            </div>
+            <!-- Branded Logo Overlay in Center of QR code -->
+            <div style="position: absolute; width: 34px; height: 34px; background: white; border: 2px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
+              <i data-lucide="leaf" style="width: 16px; height: 16px; color: var(--primary);"></i>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: var(--spacing-sm);">
+          Ahmedabad Darkroom Studio &nbsp;&bull;&nbsp; 23.03° N, 72.58° E
+        </div>
+      </div>
+
+      <!-- Mobile View: Direct 3D Model Stage -->
+      <div id="ar-mobile-content" style="display: none; text-align: center;">
+        <h3 class="font-display" style="font-size: 26px; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 4px;">
+          <i data-lucide="aperture" style="color: var(--primary);"></i> WebAR Experience
+        </h3>
+        <p class="body-sm" style="color: var(--text-secondary); margin-bottom: var(--spacing-md);">Tap 'View in your space' inside the viewer to place this lamp in your room.</p>
+        
+        <div style="width: 100%; height: 350px; background-color: var(--secondary); border-radius: var(--rounded-md); overflow: hidden; border: 1px solid var(--border); position: relative;">
+          <model-viewer id="product-3d-model" 
+                        src="" 
+                        ar 
+                        ar-modes="webxr scene-viewer quick-look" 
+                        camera-controls 
+                        interaction-prompt="auto" 
+                        shadow-intensity="1.5" 
+                        shadow-softness="1" 
+                        auto-rotate 
+                        style="width: 100%; height: 100%; --poster-color: transparent;">
+            <div class="ar-loading-indicator" slot="poster" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: var(--spacing-sm);">
+              <div class="spinner" style="width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s infinite linear;"></div>
+              <span style="font-size: 13px; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Loading 3D Model...</span>
+            </div>
+          </model-viewer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-4">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo">
+          </a>
+          <p class="body-sm" style="margin-top: var(--spacing-sm); max-width: 250px;">A creative studio linking biological curation with solar chemistry and premium home interiors.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Collections</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="collection.html?category=tower-lamps">Tower Lamps</a></li>
+            <li class="footer-link"><a href="collection.html?category=wall-art">Wall Art Prints</a></li>
+            <li class="footer-link"><a href="collection.html?category=sets">Botanical Sets</a></li>
+            <li class="footer-link"><a href="collection.html?category=limited-edition">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Studio</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Our Story</a></li>
+            <li class="footer-link"><a href="projects.html">Custom Projects</a></li>
+            <li class="footer-link"><a href="library.html">Species Registry</a></li>
+            <li class="footer-link"><a href="journal.html">Nature Journal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Social</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li class="footer-link"><a href="https://pinterest.com" target="_blank">Pinterest</a></li>
+            <li class="footer-link"><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li class="footer-link"><a href="contact.html">General Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Alchemy Stories. All rights reserved.</span>
+        <div style="display: flex; gap: var(--spacing-md);">
+          <a href="#" style="color: var(--text-secondary);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-secondary);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Scripts -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
+</html>

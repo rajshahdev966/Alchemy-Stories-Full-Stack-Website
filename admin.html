@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Alchemy Stories</title>
+  
+  <!-- Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <!-- Quill Rich Text Editor CDN -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <style>
+    .admin-login-card {
+      max-width: 420px;
+      margin: 180px auto var(--spacing-xxl);
+      padding: var(--spacing-xl);
+      background-color: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--rounded-md);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .admin-workspace {
+      display: none;
+      margin-top: 130px;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .admin-nav {
+      display: flex;
+      gap: var(--spacing-xs);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--spacing-lg);
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .admin-nav-btn {
+      padding: 12px 24px;
+      border: none;
+      background: transparent;
+      font-family: var(--font-display);
+      font-size: 16px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .admin-nav-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      font-weight: 600;
+    }
+
+    .admin-panel {
+      display: none;
+    }
+
+    .admin-panel.active {
+      display: block;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--spacing-lg);
+      font-size: 14px;
+      background: white;
+      border-radius: var(--rounded-xs);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .admin-table th,
+    .admin-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .admin-table th {
+      background-color: var(--secondary);
+      color: var(--neutral);
+      font-family: var(--font-display);
+      font-weight: 600;
+    }
+
+    .admin-table tr:hover {
+      background-color: var(--surface);
+    }
+
+    .admin-status-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .admin-status-badge.pending {
+      background-color: #fdf2e9;
+      color: #b05c18;
+    }
+
+    .admin-status-badge.shipped {
+      background-color: #eaf2ff;
+      color: #173c7b;
+    }
+
+    .admin-status-badge.completed {
+      background-color: #eafaf1;
+      color: #1e7e34;
+    }
+
+    .admin-form-box {
+      background-color: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--rounded-md);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .admin-header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: var(--spacing-sm) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Dynamic Image Uploader Styles */
+    .image-uploader-zone {
+      border: 2px dashed var(--border);
+      padding: 24px;
+      border-radius: var(--rounded-md);
+      text-align: center;
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .image-uploader-zone:hover {
+      border-color: var(--primary);
+      background-color: var(--surface);
+    }
+
+    .thumbnail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .thumbnail-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: var(--rounded-xs);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--secondary);
+    }
+
+    .thumbnail-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail-item .remove-btn {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: rgba(18, 28, 44, 0.85);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .thumbnail-item .remove-btn:hover {
+      background: var(--error);
+    }
+
+    .thumbnail-item .insert-btn {
+      position: absolute;
+      bottom: 2px;
+      left: 2px;
+      right: 2px;
+      background: rgba(18, 28, 44, 0.85);
+      color: white;
+      border: none;
+      border-radius: var(--rounded-xs);
+      font-size: 8px;
+      padding: 2px 0;
+      cursor: pointer;
+      text-align: center;
+      font-family: var(--font-display);
+    }
+
+    .thumbnail-item .insert-btn:hover {
+      background: var(--primary);
+    }
+
+    /* Distraction-free live editor container */
+    .blog-live-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-md);
+    }
+
+    .blog-live-preview {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--rounded-md);
+      padding: var(--spacing-lg);
+      max-height: 700px;
+      overflow-y: auto;
+    }
+
+    /* Quill custom styling */
+    .ql-editor {
+      min-height: 120px;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .ql-container.ql-snow {
+      border-radius: 0 0 var(--rounded-xs) var(--rounded-xs);
+    }
+
+    .ql-toolbar.ql-snow {
+      border-radius: var(--rounded-xs) var(--rounded-xs) 0 0;
+      background: var(--secondary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ADMIN HEADER -->
+  <header class="admin-header">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="index.html" class="logo-link">
+        <img src="assets/horizontal_logo-removebg.png" alt="Alchemy Stories Logo" style="height: 42px;">
+      </a>
+      <div id="admin-user-profile" style="display:none; align-items:center; gap:var(--spacing-md);">
+        <span class="body-sm" id="admin-user-email" style="color:var(--text-secondary); font-weight:600;"></span>
+        <button id="admin-logout-btn" class="btn btn-secondary"
+          style="padding: 8px 16px; font-size:12px;">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LOGIN PANEL -->
+  <div class="container">
+    <div class="admin-login-card" id="admin-login-panel">
+      <div class="text-center m-bottom-lg">
+        <i data-lucide="shield-check" style="width:48px; height:48px; color:var(--primary); margin:0 auto 12px;"></i>
+        <h2 class="font-display" style="font-size:28px; margin-bottom:4px;">Atelier Portal</h2>
+        <p class="body-sm" style="color:var(--text-secondary);">Access administrative controls and curation managers.
+        </p>
+      </div>
+      <form id="admin-login-form" onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <label class="form-label" for="admin-email">Admin Email</label>
+          <input type="email" id="admin-email" class="form-control" placeholder="admin@alchemystories.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="admin-pass">Secret Password</label>
+          <input type="password" id="admin-pass" class="form-control" placeholder="••••••••" required>
+        </div>
+        <button type="submit" id="admin-login-submit" class="btn btn-primary"
+          style="width:100%; margin-top:var(--spacing-md);">Authenticate Workspace</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMIN WORKSPACE -->
+  <div class="container admin-workspace" id="admin-workspace-panel">
+    <div class="admin-nav">
+      <button class="admin-nav-btn active" data-tab="orders">Customer Orders</button>
+      <button class="admin-nav-btn" data-tab="inquiries">Bespoke Inquiries</button>
+      <button class="admin-nav-btn" data-tab="products">Catalog Products</button>
+      <button class="admin-nav-btn" data-tab="blogs">Nature Journal</button>
+      <button class="admin-nav-btn" data-tab="species">Species Library</button>
+    </div>
+
+    <!-- TAB 1: CUSTOMER ORDERS -->
+    <div class="admin-panel active" id="panel-orders">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--spacing-md);">
+        <h3 class="font-display" style="font-size:28px;">Customer Orders</h3>
+        <button class="btn btn-secondary" id="refresh-orders-btn" style="padding:8px 16px; font-size:12px;">
+          <i data-lucide="refresh-cw" style="width:14px; height:14px; margin-right:4px;"></i> Sync Orders
+        </button>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Order Ref</th>
+            <th>Customer</th>
+            <th>Contact Info</th>
+            <th>Address Details</th>
+            <th>Curation items</th>
+            <th>Total Value</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="admin-orders-list">
+          <!-- Dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB 2: BESPOKE INQUIRIES -->
+    <div class="admin-panel" id="panel-inquiries">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--spacing-md);">
+        <h3 class="font-display" style="font-size:28px;">Bespoke Commissions & Forms</h3>
+        <button class="btn btn-secondary" id="refresh-inquiries-btn" style="padding:8px 16px; font-size:12px;">
+          <i data-lucide="refresh-cw" style="width:14px; height:14px; margin-right:4px;"></i> Sync Inquiries
+        </button>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Commission / Custom Inquiry Details</th>
+            <th>Date Received</th>
+          </tr>
+        </thead>
+        <tbody id="admin-inquiries-list">
+          <!-- Dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB 3: CATALOG PRODUCTS -->
+    <div class="admin-panel" id="panel-products">
+      <h3 class="font-display m-bottom-md" style="font-size:28px;">Product Catalog Curation</h3>
+
+      <div class="grid grid-3 gap-lg">
+        <!-- Add New Product Form -->
+        <div style="grid-column: span 1;">
+          <div class="admin-form-box">
+            <h4 class="font-display m-bottom-md" style="font-size:20px;">Curate New Product</h4>
+            <form id="admin-product-form" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label class="form-label" for="prod-id">Product Slug ID (Unique)</label>
+                <input type="text" id="prod-id" class="form-control" placeholder="e.g. ginkgo-leaf" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="prod-name">Product Name</label>
+                <input type="text" id="prod-name" class="form-control" placeholder="e.g. Stretched Ginkgo Print"
+                  required>
+              </div>
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="prod-price">Price (₹)</label>
+                  <input type="number" id="prod-price" class="form-control" placeholder="e.g. 9500" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prod-category">Category</label>
+                  <select id="prod-category" class="form-control">
+                    <option value="wall-art">Wall Art</option>
+                    <option value="tower-lamps">Tower Lamps</option>
+                    <option value="sets">Sets</option>
+                    <option value="limited-edition">Limited Edition</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Product Showcase & Gallery Images</label>
+                <div class="image-uploader-zone" id="prod-images-dropzone">
+                  <i data-lucide="upload-cloud"
+                    style="width: 28px; height: 28px; color: var(--primary); margin: 0 auto 6px;"></i>
+                  <p class="body-sm" style="margin: 0; color: var(--text-secondary); font-size:12px;">Drag & Drop
+                    artwork images here or click to browse</p>
+                  <input type="file" id="prod-images-uploader" multiple accept="image/*" style="display: none;">
+                </div>
+                <div class="thumbnail-grid" id="prod-uploaded-thumbnails"></div>
+                <div style="font-size:11px; color:var(--text-secondary); margin-top:4px;">* Note: The first image will
+                  be set as the main storefront showcase thumbnail.</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prod-glb">GLB Model Asset (FOR AR FEATURE)</label>
+                <input type="text" id="prod-glb" class="form-control" placeholder="assets/model.glb">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Brief Exposure Story (Rich Editor)</label>
+                <div id="prod-quill-desc"
+                  style="height: 100px; background: white; border-radius: var(--rounded-xs); border: 1px solid var(--border);">
+                </div>
+              </div>
+
+              <!-- Technical Specifications -->
+              <h5 class="font-display"
+                style="font-size:15px; margin: 20px 0 10px; border-bottom: 1px dashed var(--border); padding-bottom: 4px; color: var(--primary);">
+                Technical Specifications</h5>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="prod-origin">Origin / Source</label>
+                  <input type="text" id="prod-origin" class="form-control" placeholder="e.g. Coorg, Western Ghats">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prod-exposure">Solar Exposure</label>
+                  <input type="text" id="prod-exposure" class="form-control" placeholder="e.g. 12 minutes sun">
+                </div>
+              </div>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="prod-paper">Paper / Base</label>
+                  <input type="text" id="prod-paper" class="form-control" placeholder="e.g. 300gsm cotton paper">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prod-dimensions">Dimensions</label>
+                  <input type="text" id="prod-dimensions" class="form-control" placeholder="e.g. 18 x 24 inches">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prod-framing">Framing Style</label>
+                <input type="text" id="prod-framing" class="form-control" placeholder="e.g. Reclaimed teakwood">
+              </div>
+
+              <!-- Materials and Care (Rich text areas) -->
+              <div class="form-group" style="margin-top:10px;">
+                <label class="form-label">Materials & Composition (Rich Editor)</label>
+                <div id="prod-materials-editor"
+                  style="height: 100px; background: white; border-radius: var(--rounded-xs); border: 1px solid var(--border);">
+                </div>
+              </div>
+              <div class="form-group" style="margin-top:10px;">
+                <label class="form-label">Preservation & Care Guide (Rich Editor)</label>
+                <div id="prod-care-editor"
+                  style="height: 100px; background: white; border-radius: var(--rounded-xs); border: 1px solid var(--border);">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%; margin-top:var(--spacing-md);">Register
+                Product</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Curated Products List -->
+        <div style="grid-column: span 2;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Preview</th>
+                <th>Product details</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-list">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: NATURE JOURNAL -->
+    <div class="admin-panel" id="panel-blogs">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--spacing-lg);">
+        <h3 class="font-display" style="font-size:28px; margin:0;">Nature Journal Stories</h3>
+        <button class="btn btn-primary" id="blog-create-mode-btn" style="padding:8px 20px; font-size:13px;">
+          <i data-lucide="plus-circle" style="width:14px; height:14px; margin-right:6px;"></i> Draft New Story
+        </button>
+      </div>
+
+      <!-- VIEW A: ARTICLES TABLE LIST -->
+      <div id="blog-list-view">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-blogs-list">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- VIEW B: HIGH-GRADE SPLIT WRITING CANVAS (HIDDEN BY DEFAULT) -->
+      <div id="blog-editor-view" style="display: none;">
+        <div
+          style="display:flex; justify-content:space-between; align-items:center; margin-bottom: var(--spacing-md); border-bottom:1px solid var(--border); padding-bottom:12px;">
+          <h4 class="font-display" style="font-size:22px; margin:0;">Atelier Writing Desk</h4>
+          <button class="btn btn-secondary" id="blog-cancel-btn" style="padding:6px 16px; font-size:12px;">Back to
+            List</button>
+        </div>
+
+        <form id="admin-blog-form" onsubmit="event.preventDefault();">
+          <div class="blog-live-split">
+            <!-- Left Side: Customizer Inputs -->
+            <div>
+              <div class="admin-form-box" style="margin-bottom:0;">
+                <div class="form-group">
+                  <label class="form-label" for="blog-title">Story Title</label>
+                  <input type="text" id="blog-title" class="form-control" placeholder="e.g. The Memory of Leaves"
+                    required style="font-size:16px; font-weight:600;">
+                </div>
+
+                <div class="grid grid-3">
+                  <div class="form-group">
+                    <label class="form-label" for="blog-category">Category</label>
+                    <input type="text" id="blog-category" class="form-control" placeholder="e.g. Botanical Studies"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="blog-author">Author</label>
+                    <input type="text" id="blog-author" class="form-control" placeholder="Reena Jasani" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="blog-readtime">Read Time</label>
+                    <input type="text" id="blog-readtime" class="form-control" placeholder="e.g. 5 Min Read" required>
+                  </div>
+                </div>
+
+                <!-- Drag-and-drop Image Uploader -->
+                <div class="form-group">
+                  <label class="form-label">Drag & Drop Story Media (Images/Videos)</label>
+                  <div class="image-uploader-zone" id="blog-media-dropzone">
+                    <i data-lucide="upload-cloud"
+                      style="width: 32px; height: 32px; color: var(--primary); margin: 0 auto 8px;"></i>
+                    <p class="body-sm" style="margin: 0; color: var(--text-secondary); font-size:13px;">Drag files here
+                      or click to browse</p>
+                    <input type="file" id="blog-media-uploader" multiple accept="image/*,video/*"
+                      style="display: none;">
+                  </div>
+                  <div class="thumbnail-grid" id="blog-media-thumbnails"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="blog-image">Cover Photo URL (Auto-set on upload, or custom)</label>
+                  <input type="text" id="blog-image" class="form-control" placeholder="assets/journal_notebook.png">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Rich Article Body</label>
+                  <div id="blog-quill-editor" style="height: 300px; background: white;"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:20px; padding:14px;">Publish
+                  Curation to Journal</button>
+              </div>
+            </div>
+
+            <!-- Right Side: Live Frontend Preview -->
+            <div>
+              <div
+                style="font-family: var(--font-display); font-size:13px; color:var(--text-secondary); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em;">
+                Live Curation Preview</div>
+              <div class="blog-live-preview">
+                <!-- Styled identically to blog.html content -->
+                <div class="blog-meta-header" style="margin-bottom: 20px;">
+                  <span class="blog-meta-category" id="preview-blog-cat"
+                    style="color:var(--primary); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Featured
+                    note</span>
+                  <h1 class="font-display" id="preview-blog-title"
+                    style="font-size:32px; margin: 4px 0 10px; color:var(--neutral);">The Blue Hour: Rediscovering
+                    Cyanotype Art</h1>
+                  <div style="font-size:13px; color:var(--text-secondary); display:flex; gap:16px;">
+                    <span>By <strong id="preview-blog-author">Reena Jasani</strong></span>
+                    <span id="preview-blog-date">July 3, 2026</span>
+                    <span id="preview-blog-read">5 Min Read</span>
+                  </div>
+                </div>
+                <div
+                  style="border-radius: var(--rounded-xs); overflow:hidden; margin-bottom:20px; aspect-ratio:16/9; border:1px solid var(--border);">
+                  <img id="preview-blog-img" src="assets/hero_flatlay.png"
+                    style="width:100%; height:100%; object-fit:cover;" alt="Preview image">
+                </div>
+                <div class="blog-body-content" id="preview-blog-body"
+                  style="font-size:15px; color:var(--text-primary); line-height:1.7;">
+                  <p>Write content in the rich editor on the left to see the layout preview update in real-time...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB 5: SPECIES LIBRARY -->
+    <div class="admin-panel" id="panel-species">
+        <h3 class="font-display m-bottom-md" style="font-size:28px;">Nature Species Registry</h3>
+        <div class="grid grid-3 gap-lg">
+          <!-- Add Species Form -->
+          <div style="grid-column: span 1;">
+            <div class="admin-form-box">
+              <h4 class="font-display m-bottom-md" style="font-size:20px;">Register Botanical Specimen</h4>
+              <form id="admin-species-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                  <label class="form-label" for="spec-id">Specimen Code (Slug)</label>
+                  <input type="text" id="spec-id" class="form-control" placeholder="e.g. adiantum-fern" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="spec-name">Common Name</label>
+                  <input type="text" id="spec-name" class="form-control" placeholder="Maidenhair Fern" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="spec-scientific">Scientific Binomial Name</label>
+                  <input type="text" id="spec-scientific" class="form-control" placeholder="Adiantum capillus-veneris"
+                    required>
+                </div>
+                <div class="grid grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="spec-type">Flora / Fauna Type</label>
+                    <input type="text" id="spec-type" class="form-control" placeholder="Leaves / Ferns" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="spec-origin">Location Collected</label>
+                    <input type="text" id="spec-origin" class="form-control" placeholder="Western Ghats, India"
+                      required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Specimen Photo</label>
+                  <div class="image-uploader-zone" id="spec-images-dropzone">
+                    <i data-lucide="upload-cloud"
+                      style="width: 24px; height: 24px; color: var(--primary); margin: 0 auto 4px;"></i>
+                    <p class="body-sm" style="margin: 0; color: var(--text-secondary); font-size:12px;">Drag & Drop
+                      specimen image here or click to browse</p>
+                    <input type="file" id="spec-images-uploader" accept="image/*" style="display: none;">
+                  </div>
+                  <div class="thumbnail-grid" id="spec-uploaded-thumbnails"></div>
+                  <input type="hidden" id="spec-image" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Specimen Botanical Story (Rich Editor)</label>
+                  <div id="spec-quill-story"
+                    style="height: 120px; background: white; border-radius: var(--rounded-xs); border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">Save Specimen
+                  Record</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Species List -->
+          <div style="grid-column: span 2;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Specimen</th>
+                  <th>Scientific Name</th>
+                  <th>Type</th>
+                  <th>Collected Habitat</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-species-list">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+
+</html>

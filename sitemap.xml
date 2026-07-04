@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://alchemystories.co/index.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/hero_flatlay.png</image:loc>
+      <image:title>Alchemy Stories Solar Printmaking Flatlay</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://alchemystories.co/about.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Collection Page -->
+  <url>
+    <loc>https://alchemystories.co/collection.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://alchemystories.co/projects.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Nature Library -->
+  <url>
+    <loc>https://alchemystories.co/library.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Journal Home -->
+  <url>
+    <loc>https://alchemystories.co/journal.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://alchemystories.co/contact.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Products - Wild Fern -->
+  <url>
+    <loc>https://alchemystories.co/product.html?id=wild-fern</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/botanical_fern.png</image:loc>
+      <image:title>Wild Fern Cyanotype Print</image:title>
+    </image:image>
+  </url>
+
+  <!-- Products - Forest Rhythm Lamp -->
+  <url>
+    <loc>https://alchemystories.co/product.html?id=forest-rhythm-lamp</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/lamp_tower.png</image:loc>
+      <image:title>Forest Rhythm Tower Lamp</image:title>
+    </image:image>
+  </url>
+
+  <!-- Products - Murmuration -->
+  <url>
+    <loc>https://alchemystories.co/product.html?id=murmuration</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/murmuration.png</image:loc>
+      <image:title>Murmuration Starling Panel Print</image:title>
+    </image:image>
+  </url>
+
+  <!-- Products - Botanical Studies -->
+  <url>
+    <loc>https://alchemystories.co/product.html?id=botanical-studies</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/journal_notebook.png</image:loc>
+      <image:title>Botanical Study Set Triptych</image:title>
+    </image:image>
+  </url>
+
+  <!-- Products - Blue Bird Series -->
+  <url>
+    <loc>https://alchemystories.co/product.html?id=blue-bird-series</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/blue_bird_series.png</image:loc>
+      <image:title>Blue Bird Flight Study Print</image:title>
+    </image:image>
+  </url>
+
+  <!-- Products - Ocean Whispers -->
+  <url>
+    <loc>https://alchemystories.co/product.html?id=ocean-whispers</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alchemystories.co/assets/murmurations_and_schooling.png</image:loc>
+      <image:title>Ocean Whispers Canvas Print</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blogs - Solar Chemistry -->
+  <url>
+    <loc>https://alchemystories.co/blog.html?id=solar-chemistry</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blogs - Conserving Starlings -->
+  <url>
+    <loc>https://alchemystories.co/blog.html?id=conserving-starlings</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blogs - Anatomy of Ferns -->
+  <url>
+    <loc>https://alchemystories.co/blog.html?id=anatomy-of-ferns</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
